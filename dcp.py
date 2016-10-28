@@ -29,8 +29,7 @@ def main():
 		sugar_code = source.read()
 		### Разбор выражений
 		# итоговый файл
-		c_code = sugar_code
-		c_code = remove_colons(c_code)
+		c_code = remove_colons(sugar_code)
 		### Запись си-файла
 		out_file = open(out_file_name, 'w')
 		out_file.write(c_code)

@@ -1,30 +1,25 @@
 # -*- coding: utf-8 -*-
 
 def remove_colons(code):
-	""" 
-	заменяет двоеточия на фигурные скобки 
-	code - строка, содержащая sugar-код
-	"""
-	find_colon = code.find(':') 										# нашли индекс двоеточия
-	if find_colon == -1: 												# выход из рекурсии
-		return code
-	else:
-		code = code[:find_colon] + '{' + code[find_colon+1:] 			# поменять ':' на '{'
-		current_index = code[:find_colon].find('\n') 					# нашли индекс предыдущего \n; текущий индекс
-		count = 0 														# счетчик количества пробельных символов в отступе блока
-		while code[current_index].isspace(): 							# до тех пор пока пробельные символы, проверять следующий символ
-			count += 1
-			current_index += 1											# счетчик количества пробельных символов в последующих строках,
-		count_inner = 0 							 					# 		ищем конец вложенного блока
-		while count_inner != count: 									# идти дальше пока не закончится вложенный блок
-			count_inner = 0
-			current_index = code[current_index:].find('\n')
-			while code[current_index].isspace():
-				count_inner += 1
-				current_index += 1
-		current_index -= count 												 # сдвиг назад
-		code_file = code[:current_index] + '}' + '\n' + code[current_index:] # засунуть в строку '}' и '\n'
-		remove_colons(code) 												 # рекурсивный вызов
-
+    index = code.find(':')
+    if index == -1:
+        return code
+    code = code[:index]+"{"+code[index+1:]
+    index += code[index:].find('\n')
+    count = 0
+    while code[index+1].isspace():
+        count+=1
+        index+=1
+    count_inner = count
+    while index < (len(code)-1) and count_inner >= count:
+        count_inner = 0
+        index+=code[index:].find('\n')
+        while index < (len(code)-1) and code[index+1].isspace():
+            count_inner+=1
+            index+=1
+    code = code[:index]+"}"+"\n"+code[index:]
+    return remove_colons(code)
+    
+        
 if __name__ == '__main__':
-	print("It's not an executive module!")
+    print("It's not an executive module!")
