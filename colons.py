@@ -26,6 +26,7 @@ def remove_colons(code):
     code = code[:index]+"\n"+"}"+"\n"+code[index:]
     return remove_colons(code)
     
+    
 
 if __name__ == '__main__':
     print("It's not an executive module!")
