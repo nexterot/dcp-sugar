@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#hahaha
+
 def remove_colons(code):
     index = code.find(':')
     if index == -1:
