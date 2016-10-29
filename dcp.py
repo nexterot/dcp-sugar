@@ -5,6 +5,9 @@ import sys
 
 # функция, меняющая ':' на '{ }'
 from colons import remove_colons
+# функция, удаляющая ';'
+#from semicolons import remove_semicolons
+
 
 def main():
 	### Чтение файла
@@ -30,6 +33,13 @@ def main():
 		### Разбор выражений
 		# итоговый файл
 		c_code = remove_colons(sugar_code)
+<<<<<<< HEAD
+<<<<<<< HEAD
+		#c_code = remove_semicolons(sugar_code)
+=======
+>>>>>>> bc7c690f7c0b5b2611bfead3fbe87bff053c03a9
+=======
+>>>>>>> refs/remotes/origin/master
 		### Запись си-файла
 		out_file = open(out_file_name, 'w')
 		out_file.write(c_code)
