@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#hahaha
 def remove_colons(code):
     index = code.find(':')
     if index == -1:
@@ -44,3 +44,4 @@ def remove_colons(code):
 >>>>>>> refs/remotes/origin/master
 if __name__ == '__main__':
     print("It's not an executive module!")
+i = 5
