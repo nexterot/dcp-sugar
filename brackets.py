@@ -9,8 +9,7 @@ def add_brackets(code):
         if code[i+1].isalpha():
             continue
         code = code[:index]+")"+code[index:]
-        while code[index]!='\n':
-            index-=1
+        index = i
         while not code[index].isalpha():
             index+=1;
         while not code[index].isspace():
