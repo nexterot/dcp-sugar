@@ -14,10 +14,10 @@ def remove_colons(code):
     while index < (len(code)-1) and count <= count_inner:
         count_inner = 0
         index = code.find('\n', index)
-        while index < (len(code)-1) and code[index+1].isspace():
+        while index < (len(code)-1) and code[index+1] == '\t':
             count_inner+=1
             index+=1
-    code = code[:index]+"\n"+(count-1)*'\t'+"}"+'\n'+code[index:]
+    code = code[:index]+"\n"+(count-1)*'\t'+"}"+'\n'+(count-3)*'\t'+code[index:]
     return remove_colons(code)
     
     

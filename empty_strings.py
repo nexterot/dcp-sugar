@@ -6,7 +6,7 @@ def remove_empty_strings(code):
     for string in list_of_strings:
         if not string.isspace() and string:
             new_list.append(string)
-    code = '\n'.join(new_list) + '\n'
+    code = '\n'.join(new_list) + '\n'*2
     return code
 
 	
