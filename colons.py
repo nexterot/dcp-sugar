@@ -4,7 +4,7 @@ def remove_colons(code):
     index = code.find(':')
     if index == -1:
         return code
-    code = code[:index]+" {"+code[index+1:]
+    code = code[:index]+"{"+code[index+1:]
     index = code.find('\n', index)
     count = 0
     while code[index+1].isspace():
@@ -19,8 +19,8 @@ def remove_colons(code):
             index+=1
     code = code[:index]+"\n"+(count-1)*'\t'+"}"+'\n'+(count-3)*'\t'+code[index:]
     return remove_colons(code)
-    
-    
+
+
 
 if __name__ == '__main__':
     print("It's not an executive module!")
