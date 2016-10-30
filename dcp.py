@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -51,7 +51,7 @@ def main():
 		out_file = open(out_file_name, 'w')
 		out_file.write(c_code)
 		out_file.close()
-	
-	
+
+
 if __name__ == '__main__':
 	main()
