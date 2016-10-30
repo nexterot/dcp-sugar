@@ -7,8 +7,10 @@ import sys
 from empty_strings import remove_empty_strings
 # функция, меняющая ':' на '{ }'
 from colons import remove_colons
+# функция, добавляющая '()' в for, while, и т.д.
+from brackets import add_brackets
 # функция, удаляющая ';'
-#from semicolons import remove_semicolons
+from semicolons import add_semicolons
 
 
 def main():
@@ -41,7 +43,10 @@ def main():
 		c_code = remove_colons(c_code)
 		# снова убрать все пустые строки
 		c_code = remove_empty_strings(c_code)
-		#c_code = remove_semicolons(sugar_code)
+		# добавить '()' в циклы и т.п.
+		c_code = add_brackets(c_code)
+		# добавить ';'
+		c_code = add_semicolons(c_code)
 		### Запись си-файла
 		out_file = open(out_file_name, 'w')
 		out_file.write(c_code)

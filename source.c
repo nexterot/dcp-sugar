@@ -8,6 +8,9 @@ int main() {
 	for (int i = 0; i < num; i++) {
 		printf("Hello World!\n")
 		num--
+		while (num != 2) {
+			printf("everlasting cycle")
+		}
 	}
 	return 0
 }
