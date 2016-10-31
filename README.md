@@ -6,4 +6,3 @@ cd dcp-sugar
 
 sudo bash install.sh
 
-source ~/.bashrc
