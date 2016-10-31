@@ -8,6 +8,7 @@ if [ $a == "root" ]; then
     for user in $(ls /home)
     do
       echo $b>>/home/$user/.bashrc
+      source /home/$user/.bashrc
     done
   else
     echo "cd to the dcp-sugar folder!"
