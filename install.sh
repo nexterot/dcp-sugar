@@ -1,5 +1,4 @@
-a=$(whoami)
-if [ $a == "root" ]; then
+if [ $(whoami) == "root" ]; then
   if [ $0 == "install.sh" ]; then
     mkdir /usr/bin/dcp
     cp -R $(pwd)/. /usr/bin/dcp/
