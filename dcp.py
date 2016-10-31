@@ -4,13 +4,13 @@
 import sys
 
 # функция, удаляющая пустые строки
-from empty_strings import remove_empty_strings
+from modules.empty_strings import remove_empty_strings
 # функция, меняющая ':' на '{ }'
-from colons import remove_colons
+from modules.colons import remove_colons
 # функция, добавляющая '()' в for, while, и т.д.
-from brackets import add_brackets
+from modules.brackets import add_brackets
 # функция, удаляющая ';'
-from semicolons import add_semicolons
+from modules.semicolons import add_semicolons
 
 
 def main():
