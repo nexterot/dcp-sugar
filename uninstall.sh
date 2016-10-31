@@ -1,5 +1,5 @@
 if [ $(whoami) == "root" ]; then
-    if [ $0 == "install.sh" ]; then
+    if [ $0 == "uninstall.sh" ]; then
       rm -rf /usr/bin/dcp
       for user in $(ls /home)
       do
