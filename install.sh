@@ -1,13 +1,17 @@
 a=$(whoami)
 if [ $a == "root" ]; then
-  mkdir /usr/bin/dcp
-  cp -R $(pwd)/. /usr/bin/dcp/
-  chmod 555 /usr/bin/dcp/dcp.py
-  b="alias dcp=/usr/bin/dcp/dcp.py"
-  for user in $(ls /home)
-  do
-    echo $b>>/home/$user/.bashrc
-  done
+  if [ $0 == "install.sh" ]; then
+    mkdir /usr/bin/dcp
+    cp -R $(pwd)/. /usr/bin/dcp/
+    chmod 555 /usr/bin/dcp/dcp.py
+    b="alias dcp=/usr/bin/dcp/dcp.py"
+    for user in $(ls /home)
+    do
+      echo $b>>/home/$user/.bashrc
+    done
+  else
+    echo "cd to the dcp-sugar folder!"
+  fi
 else
   echo "use sudo"
 fi
