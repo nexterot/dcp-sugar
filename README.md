@@ -1,6 +1,4 @@
-dcp-sugar
-
-How to install:
+**How to install:**
 
 git clone https://github.com/Nexterot/dcp-sugar
 
