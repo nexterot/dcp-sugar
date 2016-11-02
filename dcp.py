@@ -11,6 +11,8 @@ from modules.colons import remove_colons
 from modules.brackets import add_brackets
 # функция, удаляющая ';'
 from modules.semicolons import add_semicolons
+# функция, меняющая (and,or) на (&&,||)
+from modules.logical_operators import replace_or_and
 
 
 def main():
@@ -39,6 +41,9 @@ def main():
 		c_code = sugar_code
 		# убрать все пустые строки
 		c_code = remove_empty_strings(c_code)
+		# заменить and и or
+		c_code = replace_or_and(c_code)
+		print(c_code)
 		# заменить двоеточия
 		c_code = remove_colons(c_code)
 		# снова убрать все пустые строки
