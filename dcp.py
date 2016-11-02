@@ -43,7 +43,6 @@ def main():
 		c_code = remove_empty_strings(c_code)
 		# заменить and и or
 		c_code = replace_or_and(c_code)
-		print(c_code)
 		# заменить двоеточия
 		c_code = remove_colons(c_code)
 		# снова убрать все пустые строки
